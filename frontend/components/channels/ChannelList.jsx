@@ -5,9 +5,10 @@ class ChannelList extends Component{
     render(){
         return(
             <ul>{
-                this.props.channels.maps( chan =>{
-                    <Channel
+                this.props.channels.map( chan =>{
+                    return <Channel
                     channel={chan}
+                    key={chan.id}
                     setChannel={this.props.setChannel} />
                 })
             }</ul>
@@ -15,7 +16,7 @@ class ChannelList extends Component{
     }
 }
 
-ChannelList.prototype={
+ChannelList.PropTypes={
     channels: React.PropTypes.array.isRequired,
     setChannel: React.PropTypes.func.isRequired
 }

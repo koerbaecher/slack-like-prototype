@@ -14,7 +14,7 @@ class ChannelSection extends Component{
     }
 }
 
-ChannelSection.prototype={
+ChannelSection.PropTypes={
     channels: React.PropTypes.array.isRequired,
     setChannel: React.PropTypes.func.isRequired,
     addChannel: React.PropTypes.func.isRequired

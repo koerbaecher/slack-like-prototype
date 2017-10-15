@@ -4,6 +4,7 @@
 *.so
 *.dylib
 
+/frontend/node_modules/
 # Test binary, build with `go test -c`
 *.test
 
