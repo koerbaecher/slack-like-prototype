@@ -3,15 +3,14 @@ package main
 import (
 	r "github.com/dancannon/gorethink"
 	"github.com/gorilla/websocket"
-	"log"
 )
 
 type FindHandler func(string) (Handler, bool)
 
 type Client struct {
-	send         chan Message
-	socket       *websocket.Conn
-	findHandler  FindHandler
+	send        chan Message
+	socket      *websocket.Conn
+	findHandler FindHandler
 }
 
 func (client *Client) Read() {
@@ -47,8 +46,8 @@ func (c *Client) Close() {
 
 func NewClient(socket *websocket.Conn, findHandler FindHandler) *Client {
 	return &Client{
-		send:         make(chan Message),
-		socket:       socket,
-		findHandler:  findHandler,
+		send:        make(chan Message),
+		socket:      socket,
+		findHandler: findHandler,
 	}
 }

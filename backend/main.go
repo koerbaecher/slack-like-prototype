@@ -1,12 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
-	"time"
-
-	"github.com/gorilla/websocket"
-	"github.com/mitchellh/mapstructure"
 )
 
 type Channel struct {
@@ -17,10 +12,8 @@ type Channel struct {
 func main() {
 	router := NewRouter()
 
-	//router.Handle("channel add", addChannel)
+	router.Handle("channel add", addChannel)
 
 	http.Handle("/", router)
 	http.ListenAndServe(":8080", nil)
 }
-
-
