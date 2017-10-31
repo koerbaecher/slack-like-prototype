@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  rethinkdb:
+    build: ./rethinkdb
+    image: slacklikeprototype/rethinkdb
+    container_name: rethinkdb
+    ports: 
+      - "8080:8080"
+      - "29015:29015"
+      - "28015:28015"
